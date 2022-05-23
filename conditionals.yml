@@ -1,0 +1,16 @@
+--- # this is conditionals concept
+- hosts: webservers
+  become: true
+  user: ansible
+  connection: ssh
+
+  tasks:
+    - name: installing apache for debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "debian"
+
+    - name: installing apache on redhat
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"
+
+

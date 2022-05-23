@@ -1,0 +1,15 @@
+--- 
+- hosts: webservers
+  become: yes
+
+  tasks:
+    - name: installing git on webservers
+      yum:
+        name=gi state=installed
+         
+      ignore_errors: yes
+
+    - name: installing tree on webservers
+      yum:
+        name=tree state=present
+

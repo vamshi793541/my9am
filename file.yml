@@ -1,0 +1,18 @@
+--- # this is a file creation
+- hosts: webservers
+  become: true
+
+  tasks: 
+
+    - name: creating a file
+      file:
+        name=saifile state=touch
+
+
+    - name: creating a rajfile
+      file:
+        path: /tmp/rajfile
+        state: touch
+
+    - name: creating a file
+      action: file name=vamshi state=touch

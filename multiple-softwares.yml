@@ -1,0 +1,12 @@
+--- # installing multiple softwares
+- hosts: webservers
+  become: yes
+
+  tasks:
+    - name: install packages
+      yum:
+        name: ['git', 'docker', 'mysql', 'tree']
+        state: installed
+   
+
+

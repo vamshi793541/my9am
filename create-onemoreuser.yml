@@ -1,0 +1,16 @@
+--- 
+- hosts: webservers
+  become: yes
+
+  tasks:
+    - name: creating user pavan
+      action: user name=pavan
+    - name: creating user vaishnavi
+      user:
+        name=vaishnavi
+    - name: creating user omprakash
+      user: name=omprakash
+    - name: creating user prakash
+      user:
+        name: prakash
+        state: present

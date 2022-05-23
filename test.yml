@@ -1,0 +1,17 @@
+--- # this is test file
+- hosts: webservers
+  become: true
+  connection: ssh
+  user: ansible
+
+  tasks:
+    - name: installing httpd on webservers
+      action: yum pkg=httpd state=present
+
+      notify: start the httpd service
+
+
+  handlers:
+
+    - name: start the httpd service
+      action: service name=httpd state=started
